@@ -1,8 +1,9 @@
 package br.edu.ifpb.report.controller;
 
 import br.edu.ifpb.report.database.PostgreSQLDatabaseConnector;
+import br.edu.ifpb.report.service.Report;
 
-public class ExpenseReport extends ReportTemplate {
+public class ExpenseReport extends ReportTemplate implements Report{
 
     private PostgreSQLDatabaseConnector connector = new PostgreSQLDatabaseConnector();
 
@@ -23,6 +24,11 @@ public class ExpenseReport extends ReportTemplate {
 	@Override
 	public void convert() {
 		System.out.println("Converting To XLS...");
+		
+	}
+	
+	public void generateReport() {
+		this.generate();
 		
 	}
 

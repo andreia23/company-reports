@@ -1,8 +1,9 @@
 package br.edu.ifpb.report.controller;
 
 import br.edu.ifpb.report.database.MysqlDatabaseConnector;
+import br.edu.ifpb.report.service.Report;
 
-public class TaxReport extends ReportTemplate {
+public class TaxReport extends ReportTemplate implements Report {
 
 	private MysqlDatabaseConnector connector = new MysqlDatabaseConnector();
 
@@ -24,5 +25,10 @@ public class TaxReport extends ReportTemplate {
 	public void convert() {
 		System.out.println("Converting To PDF...");
 
+	}
+	
+	public void generateReport() {
+		this.generate();
+		
 	}
 }
